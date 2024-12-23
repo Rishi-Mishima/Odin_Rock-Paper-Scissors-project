@@ -15,7 +15,30 @@
 
 
 
+    <script>
+        function getComputerChoice() {
+            // get a random number 
+            const computerRandom = Math.floor(Math.random() * 3)
+            console.log(computerRandom);
 
+            // make the value as 'choice'
+
+            let choice
+
+            if (computerRandom === 0) {
+                choice = 'paper'
+            } else if (computerRandom === 1) {
+                choice = 'rock'
+            } else if (computerRandom === 2) {
+                choice = 'scissors'
+            }
+
+            console.log(choice);
+            return choice // return the choice as well
+
+        }
+        getComputerChoice()
+    </script>
 </body>
 
 </html>
