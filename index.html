@@ -16,6 +16,7 @@
 
 
     <script>
+        // get a random computer choice 
         function getComputerChoice() {
             // get a random number 
             const computerRandom = Math.floor(Math.random() * 3)
@@ -38,6 +39,26 @@
 
         }
         getComputerChoice()
+
+        function getHumanChoice() {
+            // get human random choice - using prompt 
+            let humanPrompt = prompt("what is your choice pls type rock or paper or scissors")
+
+            let humanChoice;
+            if (humanPrompt.toLowerCase() === 'rock') {
+                humanChoice = 'rock'
+            } else if (humanPrompt.toLowerCase() === 'paper') {
+                humanChoice = 'paper'
+            } else if (humanPrompt.toLowerCase() === 'scissors') {
+                humanChoice = 'scissors'
+            }
+            console.log(humanChoice);
+            return humanChoice
+
+        }
+        getHumanChoice()
+
+        
     </script>
 </body>
 
