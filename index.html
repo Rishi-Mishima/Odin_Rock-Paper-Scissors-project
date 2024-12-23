@@ -80,17 +80,53 @@
                 (humanChoice === 'scissors' && choice === 'paper')
             ) {
                 console.log('You Win this round!');
-                humanScore++
+                return 'human'
             } else {
                 console.log('Computer Wins this round!');
-                computerScore++;
+                return 'computer'
             }
 
             console.log(`Current Score - Human: ${humanScore}, Computer: ${computerScore}`);
         }
 
-        playRound(getHumanChoice(), getComputerChoice());
 
+
+
+        // --- check 5 rounds ---
+        function playGame() {
+
+            for (let i = 0; i < 5; i++) {
+                // record the numbers of round 
+                console.log(`Round ${i + 1}:`);
+
+                //play a single round
+                const result = playRound(getHumanChoice(), getComputerChoice());
+
+                // track the scores
+                if (result === 'human') {
+                    humanScore++
+                } else if (result === "computer") {
+                    computerScore++
+                }
+
+                // Stop early if someone wins 3 rounds
+                if (humanScore === 3 || computerScore === 3) {
+                    break
+                }
+            }
+
+            // Declare the winner
+            if (humanScore > computerScore) {
+                console.log(`Congratulations! You won the game with a score of ${humanScore} to ${computerScore}.`);
+            } else if (computerScore > humanScore) {
+                console.log(`Sorry, the computer won the game with a score of ${computerScore} to ${humanScore}.`);
+            } else {
+                console.log("It's a tie overall!");
+            }
+        }
+
+        // Start the game
+        playGame();
     </script>
 </body>
 
