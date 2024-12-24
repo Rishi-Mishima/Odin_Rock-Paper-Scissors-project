@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    display: flex;
+    /* Flexbox for horizontal layout */
+    height: 100vh;
+    /* Full viewport height */
+}
+
+.left-section {
+    flex: 6;
+    /* 6 parts of the width */
+    background-color: #6ec126;
+    /* Optional background color */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* Center content horizontally */
+    align-items: center;
+    /* Center content vertically */
+    color: white;
+    font-size: 2rem;
+}
+
+.heading {
+    font-family: 'Playwrite DE VA Guides', sans-serif;
+    font-size: 3.5rem;
+    color: #333;
+    /* Optional text color */
+    text-align: center;
+    /* Center the text */
+    margin-bottom: 40px;
+}
+
+.intro {
+
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 674;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.start {
+    font-family: "Montserrat", serif;
+    font-size: 1.5rem;
+    font-optical-sizing: auto;
+    font-weight: 674;
+    padding: 10px 50px;
+    margin-bottom: 40px;
+    color: #333;
+    border: none;
+    /* Remove default border */
+    border-radius: 0.5rem;
+    /* Optional rounded corners */
+    cursor: pointer;
+    /* Show pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.2s;
+    /* Smooth transition for hover effects */
+
+}
+
+.start:hover {
+    color: white;
+    background-color: #000000;
+    /* Change background color on hover */
+    transform: scale(1.05);
+    /* Slightly enlarge the button on hover */
+}
+
+.start:active {
+    transform: scale(0.95);
+    /* Slightly shrink the button when clicked */
+}
+
+.right-section {
+    flex: 4;
+    /* 4 parts of the width */
+    display: flex;
+    justify-content: center;
+    /* Center content horizontally */
+    align-items: center;
+    /* Center content vertically */
+    color: white;
+}
