@@ -16,7 +16,7 @@
 
         <h1 class="heading"> Rock Paper Scissors</h1>
         <p class="intro">
-            Beat the computer in 5 rounds!
+
         </p>
         <button class="start">
             START
@@ -30,12 +30,36 @@
 
     <script>
         // ! ---- the loading page button ---- 1
-
         const startButton = document.querySelector('.start')
 
         startButton.addEventListener('click', function () {
             window.location.href = 'game.html'
         })
+
+        // !--- make the intro para with a typewriter effect
+        const p = document.querySelector('.intro')
+        const text = 'Beat the computer in 5 rounds!'
+
+        function textTyingEffect(e, text, i = 0) {
+
+            // if call the function again, every times it starts with an empty string
+            if (i === 0) {
+                e.textContent = ""
+            }
+
+            e.textContent += text[i]
+
+
+            if (i === text.length - 1) {
+
+                return
+            }
+
+            setTimeout(() => textTyingEffect(e, text, i + 1), 50);
+
+        }
+
+        textTyingEffect(p, text)
     </script>
 
 

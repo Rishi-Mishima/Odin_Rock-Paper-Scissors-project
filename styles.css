@@ -68,6 +68,12 @@ body {
     /* Slightly enlarge the button on hover */
 }
 
+img:hover {
+    transform: scale(1.2);
+    /* Slightly enlarge the button on hover */
+}
+
+
 .start:active {
     transform: scale(0.95);
     /* Slightly shrink the button when clicked */
