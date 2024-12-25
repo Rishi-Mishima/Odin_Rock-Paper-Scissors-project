@@ -32,40 +32,40 @@ function getComputerChoice() {
 //remove the previous class and add the selected
 const choices = document.querySelectorAll('.choice');
 
-choices.forEach(choice => {
-    choice.addEventListener('click', () => {
-        // Remove the 'selected' class from all choices
-        choices.forEach(c => c.classList.remove('selected'));
-        // Add the 'selected' class to the clicked choice
-        choice.classList.add('selected');
-    });
-});
 
-// this function is to use prompt to get human choice 
-// function getHumanChoicePrompt() {
-//     let humanChoice;
 
-//     // get human random choice - using prompt 
-//     // let humanPrompt = prompt("what is your choice pls type rock or paper or scissors")
+// choices is not a single element:
+//document.querySelectorAll('.choice')returns a NodeList, which is a collection of elements. You cannot directly attach an event listener
+//Instead, you need to loop through each element in the NodeList and attach an event listener to each one
 
-//     if (humanPrompt.toLowerCase() === 'rock') {
-//         humanChoice = 'rock'
-//     } else if (humanPrompt.toLowerCase() === 'paper') {
-//         humanChoice = 'paper'
-//     } else if (humanPrompt.toLowerCase() === 'scissors') {
-//         humanChoice = 'scissors'
-//     }
-//     console.log(humanChoice);
-//     return humanChoice
-
-// }
-
+// Asynchronous Nature of Event Listeners:
 function getHumanChoice() {
-    let humanChoice;
-    choices.addEventListener
+    const choices = document.querySelectorAll('.choice');
+
+    // Add click event listeners to each choice
+    choices.forEach(choice => {
+        choice.addEventListener('click', () => {
+            // Remove the 'selected' class from all choices
+            choices.forEach(c => c.classList.remove('selected'));
+
+            // Add the 'selected' class to the clicked choice
+            choice.classList.add('selected');
+
+            // Get the clicked choice
+            const humanChoice = choice.getAttribute('data-choice');
+            console.log(`Human selected: ${humanChoice}`);
+
+            // Compare choices with the computer
+            const computerChoice = getComputerChoice();
+            const result = playRound(humanChoice, computerChoice);
+
+
+        });
+    });
 }
 
-
+// Start the game
+getHumanChoice();
 
 
 //--- Playing one round the logic ---
@@ -98,40 +98,5 @@ function playRound(humanChoice, choice) {
 
 
 
-// --- check 5 rounds ---
-function playGame() {
-
-    for (let i = 0; i < 5; i++) {
-        // record the numbers of round 
-        console.log(`Round ${i + 1}:`);
-
-        //play a single round
-        const result = playRound(getHumanChoice(), getComputerChoice());
-
-        // track the scores
-        if (result === 'human') {
-            humanScore++
-        } else if (result === "computer") {
-            computerScore++
-        }
-
-        // Stop early if someone wins 3 rounds
-        if (humanScore === 3 || computerScore === 3) {
-            break
-        }
-    }
-
-    // Declare the winner
-    if (humanScore > computerScore) {
-        console.log(`Congratulations! You won the game with a score of ${humanScore} to ${computerScore}.`);
-    } else if (computerScore > humanScore) {
-        console.log(`Sorry, the computer won the game with a score of ${computerScore} to ${humanScore}.`);
-    } else {
-        console.log("It's a tie overall!");
-    }
-}
-
-// Start the game
-playGame();
 
 
