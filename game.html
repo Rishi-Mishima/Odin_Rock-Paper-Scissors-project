@@ -200,6 +200,36 @@
             transform: scale(1.1);
             /* Slightly enlarge the selected choice */
         }
+
+        .game-controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+        }
+
+        #restart-button {
+
+            justify-content: center;
+            font-family: "Montserrat", serif;
+            font-size: 1.5rem;
+            font-optical-sizing: auto;
+            font-weight: 674;
+            padding: 10px 50px;
+            margin-bottom: 40px;
+            color: #333;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        #restart-button:hover {
+            background-color: #000000;
+            color: white;
+            transform: scale(1.05);
+            /* Slightly enlarge on hover */
+        }
     </style>
 </head>
 
@@ -258,8 +288,6 @@
                 <p class="caption">PAPER</p>
             </div>
         </div>
-
-
     </div>
 
 

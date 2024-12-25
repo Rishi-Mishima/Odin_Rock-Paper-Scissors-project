@@ -71,6 +71,7 @@ function playRound(humanChoice, choice) {
     // if tied up, should not be within the loop 
 
     const descriptionElement = document.querySelector('.description');
+    descriptionElement.classList.remove('final-message')
     if (choice === humanChoice) {
         console.log('tied');
         descriptionElement.textContent = "It's a tie!";
@@ -94,14 +95,15 @@ function playRound(humanChoice, choice) {
 
 
 
-
 // --- Play Game ---
 let currentRound = 0;
 let humanScore = 0;
 let computerScore = 0;
 
+
 // --- Play Game ---
 function playGame(humanChoice) {
+
     const computerChoice = getComputerChoice();
     const result = playRound(humanChoice, computerChoice);
 
@@ -123,7 +125,10 @@ function playGame(humanChoice) {
 }
 
 // --- Restart Game ---
-function restartGame() {
+
+
+const restart = document.getElementById('restart-button')
+restart.addEventListener('click', function restartGame() {
     // Reset game variables
     currentRound = 0;
     humanScore = 0;
@@ -140,8 +145,8 @@ function restartGame() {
     console.log("Game restarted. Let's play!");
 
     // Re-enable choice selection
-    getHumanChoice();
-}
+    // getHumanChoice();
+})
 
 // --- Declare Winner ---
 function declareWinner() {
