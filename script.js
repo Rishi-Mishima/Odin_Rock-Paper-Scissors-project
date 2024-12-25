@@ -116,6 +116,10 @@ function playGame(humanChoice) {
 
     currentRound++;
 
+    const playerScores = document.getElementById('playerScores')
+    playerScores.textContent = ` ${humanScore}`
+    document.getElementById('computerScores').textContent = `${computerScore}`
+
     console.log(`Round ${currentRound}: Human Score: ${humanScore}, Computer Score: ${computerScore}`);
 
     // Check if the game should end
@@ -137,6 +141,9 @@ restart.addEventListener('click', function restartGame() {
     // Reset UI elements
     document.querySelector('.description').textContent = 'Ready to play!';
     document.querySelectorAll('.choice').forEach(choice => choice.classList.remove('selected'));
+
+    playerScores.textContent = "scores"
+    document.getElementById('computerScores').textContent = `scores`
 
     // Hide the restart button
     document.getElementById('restart-button').style.display = 'none';
