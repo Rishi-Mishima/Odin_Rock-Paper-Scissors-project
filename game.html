@@ -18,6 +18,7 @@
             flex-direction: column;
         }
 
+        /* the up above banner - Choose your weapon */
         .head {
             background-color: #6ec126;
             /* Optional background color */
@@ -28,8 +29,75 @@
             /* Center content vertically */
             color: white;
             font-size: 2rem;
+            margin-bottom: 20px;
         }
 
+
+        /* scores board */
+
+        .middle {
+            display: flex;
+            /* Arrange children in a horizontal row */
+            justify-content: space-between;
+            /* Distribute space evenly */
+            align-items: center;
+            /* Align items vertically */
+            padding: 20px;
+            background-color: #333;
+            /* Dark background for the scoreboard */
+            color: #fff;
+            /* Light text color for contrast */
+            border-radius: 10px;
+            /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* Add shadow for depth */
+            font-family: sans-serif;
+            /* Set font family */
+            width: 80%;
+            /* Adjust width of the scoreboard */
+            margin: 0 auto;
+            /* Center the scoreboard */
+        }
+
+        .player,
+        .computer {
+            text-align: center;
+            /* Center text in each section */
+            flex: 1;
+            /* Equal width for player and computer sections */
+        }
+
+        .vs-section {
+            flex: 0.5;
+            /* Allocate space for the VS section */
+            display: flex;
+            /* Use flex to stack VS and description */
+            flex-direction: column;
+            /* Stack VS and description vertically */
+            align-items: center;
+            /* Center them horizontally */
+            text-align: center;
+            /* Center text alignment */
+        }
+
+
+        .description {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem;
+            /* Larger font size for emphasis */
+            font-weight: bold;
+            color: #ffd700;
+            /* Gold color for the result */
+            animation: pulse 1s infinite;
+            /* Optional pulse animation */
+            padding: 2rem;
+        }
+
+        
+        
+        /* Pictures and choices  */
         .pictures {
             display: flex;
         }
@@ -49,16 +117,24 @@
                 <h3>scores</h3>
             </div>
 
-            <div class="vs">
-                <h3>vs</h3>
+            <div class="vs-section">
+                <div class="vs">
+                    <h3>vs</h3>
+                </div>
+
             </div>
 
             <div class="computer">
                 <h3>Computer</h3>
                 <h3>scores</h3>
             </div>
+
         </div>
-        
+
+        <div class="description">
+            YOU WIN
+        </div>
+
         <div class="pictures">
             <div class="rock">
                 <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgXB7L4Zdtabouu-AVNR4befQo2gMPG3w5x5WWQvIbOXqMLSC0LmziQFCZR_IzvAnrPfrkN4tg3QeMRjqlLT3GtFAi83s9lc56UosgHzSzbrC1m_oXXXoebQCXL81_wPM9rDXKaTxgEIZDo/s1600/rock_balancing.png"
