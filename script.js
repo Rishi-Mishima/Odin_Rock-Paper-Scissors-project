@@ -69,22 +69,26 @@ function getHumanChoice() {
 function playRound(humanChoice, choice) {
     console.log(`Human chose: ${humanChoice}, Computer chose: ${choice}`);
     // if tied up, should not be within the loop 
+
+    const descriptionElement = document.querySelector('.description');
     if (choice === humanChoice) {
         console.log('tied');
+        descriptionElement.textContent = "It's a tie!";
     } else if (
         (humanChoice === 'rock' && choice === 'scissors') ||
         (humanChoice === 'paper' && choice === 'rock') ||
         (humanChoice === 'scissors' && choice === 'paper')
     ) {
         console.log('You Win this round!');
+        descriptionElement.textContent = 'You Win this round!';
         return 'human'
     } else {
         console.log('Computer Wins this round!');
+        descriptionElement.textContent = 'Computer Wins this round!';
         return 'computer'
     }
 
     //  console.log(`Current Score - Human: ${humanScore}, Computer: ${computerScore}`);
-
 
 }
 
@@ -118,15 +122,46 @@ function playGame(humanChoice) {
     }
 }
 
-function declareWinner() {
-    if (humanScore > computerScore) {
-        console.log(`Congratulations! You won the game with a score of ${humanScore} to ${computerScore}.`);
-    } else if (computerScore > humanScore) {
-        console.log(`Sorry, the computer won the game with a score of ${computerScore} to ${humanScore}.`);
-    } else {
-        console.log("It's a tie overall!");
-    }
+// --- Restart Game ---
+function restartGame() {
+    // Reset game variables
+    currentRound = 0;
+    humanScore = 0;
+    computerScore = 0;
+
+    // Reset UI elements
+    document.querySelector('.description').textContent = 'Ready to play!';
+    document.querySelectorAll('.choice').forEach(choice => choice.classList.remove('selected'));
+
+    // Hide the restart button
+    document.getElementById('restart-button').style.display = 'none';
+
+    console.clear();
+    console.log("Game restarted. Let's play!");
+
+    // Re-enable choice selection
+    getHumanChoice();
 }
+
+// --- Declare Winner ---
+function declareWinner() {
+    const descriptionElement = document.querySelector('.description');
+
+    // Add a class to make the final message visually distinct
+    descriptionElement.classList.add('final-message');
+
+    if (humanScore > computerScore) {
+        descriptionElement.textContent = `Congratulations! You won the game with a score of ${humanScore} to ${computerScore}.`;
+    } else if (computerScore > humanScore) {
+        descriptionElement.textContent = `Sorry, the computer won the game with a score of ${computerScore} to ${humanScore}.`;
+    } else {
+        descriptionElement.textContent = "It's a tie overall!";
+    }
+
+    // Show the restart button
+    document.getElementById('restart-button').style.display = 'block';
+}
+
 
 // Start the game
 getHumanChoice();

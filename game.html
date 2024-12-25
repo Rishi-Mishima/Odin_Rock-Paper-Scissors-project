@@ -92,14 +92,37 @@
             font-size: 3rem;
             /* Larger font size for emphasis */
             font-weight: bold;
-            color: #ffd700;
+            color: #6ec126;
             /* Gold color for the result */
             animation: pulse 1s infinite;
             /* Optional pulse animation */
-            padding: 2rem;
+            padding: 80px;
         }
 
+        .description.final-message {
+            font-family: 'Playwrite DE VA Guides';
+            font-size: 2rem;
+            /* Increase font size */
+            font-weight: bolder;
+            /* Make it bold */
 
+            color: #000000;
+            /* Use a distinct color (e.g., orange-red) */
+            text-transform: uppercase;
+            /* Make the text uppercase */
+            border: 2px solid #ffffff;
+            /* Add a border */
+
+            /* Add some padding */
+            border-radius: 5px;
+            /* Round the corners */
+
+            /* Light background for contrast */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
 
         /* Pictures and choices  */
         .pictures {
@@ -208,8 +231,13 @@
         </div>
 
         <div class="description">
-            YOU WIN
+
         </div>
+
+        <div class="game-controls">
+            <button id="restart-button" style="display: none;">Restart Game</button>
+        </div>
+
 
         <div class="pictures">
             <div class="choice rock" data-choice="rock">
@@ -230,6 +258,8 @@
                 <p class="caption">PAPER</p>
             </div>
         </div>
+
+
     </div>
 
 
