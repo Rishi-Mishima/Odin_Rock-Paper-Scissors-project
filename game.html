@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+VA+Guides&display=swap" rel="stylesheet">
+
     <style>
         body {
             margin: 0;
@@ -52,7 +53,7 @@
             /* Light text color for contrast */
             border-radius: 10px;
             /* Rounded corners */
-            box-shadow: 0 4px 8px rgba(5, 240, 91, 0.2);
+            box-shadow: 0 4px 8px rgba(187, 216, 198, 0.2);
             /* Add shadow for depth */
             font-family: sans-serif;
             /* Set font family */
@@ -167,6 +168,15 @@
             font-size: 1.5rem;
             color: #333;
         }
+
+        .choice.selected {
+            border-color: #FFD700;
+            /* Highlight selected choice */
+            background-color: #f0f0f0;
+            /* Optional background for selected choice */
+            transform: scale(1.1);
+            /* Slightly enlarge the selected choice */
+        }
     </style>
 </head>
 
@@ -223,6 +233,7 @@
     </div>
 
 
+    <script src="script.js"></script>
 </body>
 
 </html>

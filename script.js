@@ -25,24 +25,47 @@ function getComputerChoice() {
 }
 
 
+
 //---- Get human Choice function----
+
+// Select the choices
+//remove the previous class and add the selected
+const choices = document.querySelectorAll('.choice');
+
+choices.forEach(choice => {
+    choice.addEventListener('click', () => {
+        // Remove the 'selected' class from all choices
+        choices.forEach(c => c.classList.remove('selected'));
+        // Add the 'selected' class to the clicked choice
+        choice.classList.add('selected');
+    });
+});
+
+// this function is to use prompt to get human choice 
+// function getHumanChoicePrompt() {
+//     let humanChoice;
+
+//     // get human random choice - using prompt 
+//     // let humanPrompt = prompt("what is your choice pls type rock or paper or scissors")
+
+//     if (humanPrompt.toLowerCase() === 'rock') {
+//         humanChoice = 'rock'
+//     } else if (humanPrompt.toLowerCase() === 'paper') {
+//         humanChoice = 'paper'
+//     } else if (humanPrompt.toLowerCase() === 'scissors') {
+//         humanChoice = 'scissors'
+//     }
+//     console.log(humanChoice);
+//     return humanChoice
+
+// }
+
 function getHumanChoice() {
     let humanChoice;
-
-    // get human random choice - using prompt 
-    let humanPrompt = prompt("what is your choice pls type rock or paper or scissors")
-
-    if (humanPrompt.toLowerCase() === 'rock') {
-        humanChoice = 'rock'
-    } else if (humanPrompt.toLowerCase() === 'paper') {
-        humanChoice = 'paper'
-    } else if (humanPrompt.toLowerCase() === 'scissors') {
-        humanChoice = 'scissors'
-    }
-    console.log(humanChoice);
-    return humanChoice
-
+    choices.addEventListener
 }
+
+
 
 
 //--- Playing one round the logic ---
