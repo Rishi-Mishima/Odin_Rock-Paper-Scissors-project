@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+VA+Guides&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
@@ -20,6 +22,7 @@
 
         /* the up above banner - Choose your weapon */
         .head {
+
             background-color: #6ec126;
             /* Optional background color */
             display: flex;
@@ -43,13 +46,13 @@
             align-items: center;
             /* Align items vertically */
             padding: 20px;
-            background-color: #333;
+            /* background-color: #333; */
             /* Dark background for the scoreboard */
-            color: #fff;
+            color: #000000;
             /* Light text color for contrast */
             border-radius: 10px;
             /* Rounded corners */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(5, 240, 91, 0.2);
             /* Add shadow for depth */
             font-family: sans-serif;
             /* Set font family */
@@ -95,11 +98,74 @@
             padding: 2rem;
         }
 
-        
-        
+
+
         /* Pictures and choices  */
         .pictures {
             display: flex;
+            justify-content: space-around;
+            /* make the pictures space evenly */
+            align-items: center;
+            margin: 20px;
+        }
+
+        .choice {
+            height: auto;
+            display: flex;
+            /* Flex layout for aligning image and caption */
+            flex-direction: column;
+            /* Stack image and caption vertically */
+            align-items: center;
+            /* Center align image and caption */
+            justify-content: flex-start;
+            /* Align content at the top */
+            text-align: center;
+            /* Center the caption text */
+            width: 200px;
+            /* Set a uniform width for each choice */
+            padding: 10px;
+            border: 2px solid transparent;
+            /* Add a transparent border by default */
+            border-radius: 10px;
+            /* Rounded corners */
+            cursor: pointer;
+            /* Show pointer on hover */
+            transition: border-color 0.3s, transform 0.2s;
+            /* Smooth transitions */
+        }
+
+        .choice img {
+            width: 200px;
+            /* Fixed width for all images */
+            height: 200px;
+            /* Fixed height for all images */
+            object-fit: cover;
+            /* Ensure the image fills the container without distortion */
+            border-radius: 8px;
+            /* Optional: Add rounded corners to images */
+        }
+
+        .choice:hover {
+            border-color: #000000;
+            /* Add a border color on hover */
+            transform: scale(1.05);
+            /* Slightly enlarge on hover */
+        }
+
+        .choice.selected {
+            border-color: #FFD700;
+            /* Highlight selected choice */
+            background-color: #f0f0f0;
+            /* Optional background for selected choice */
+            transform: scale(1.1);
+            /* Slightly enlarge the selected choice */
+        }
+
+        .caption {
+            font-family: 'Playwrite DE VA Guides';
+            margin-top: 10px;
+            font-size: 1.5rem;
+            color: #333;
         }
     </style>
 </head>
@@ -136,25 +202,27 @@
         </div>
 
         <div class="pictures">
-            <div class="rock">
+            <div class="choice rock">
                 <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgXB7L4Zdtabouu-AVNR4befQo2gMPG3w5x5WWQvIbOXqMLSC0LmziQFCZR_IzvAnrPfrkN4tg3QeMRjqlLT3GtFAi83s9lc56UosgHzSzbrC1m_oXXXoebQCXL81_wPM9rDXKaTxgEIZDo/s1600/rock_balancing.png"
                     alt="the pic of rocks">
                 <p class="caption">ROCK</p>
             </div>
 
-            <div class="scissors">
+            <div class="choice scissors">
                 <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFmJoRyADfWf3QB7DM1cL5BupWxjncSXDgnEat1OsUVOCfIQkXkXjcJA8pUAFB-KqLc_0F47XaKG39C3hEkrpmdGL1UXfb2Y5LRfFUJwiNniAaLbUyhyphenhyphenoTVdv_uKw3uN0RZMtJkwwuZ6jx/s1600/bunbougu_hasami.png"
                     alt="the pic of scissors">
                 <p class="caption">SCISSORS</p>
             </div>
 
-            <div class="paper">
+            <div class="choice paper">
                 <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgem8F1XdIvbJwCU0elB1u1SbEcQtC8WqtpqnYbMRRxiPyqbMmmQU1RyYwTF2TWkKUal3cn_S0JV0yPRGAdSIPLMTnm32txU4bd27LfBFJM4OQH1rUEH4x3H_zE3iS2YSAo_rF2L4FTq5aF/s1600/toilet_paper_cover.png"
                     alt="the pic of toilet paper">
                 <p class="caption">PAPER</p>
             </div>
         </div>
     </div>
+
+
 </body>
 
 </html>
