@@ -23,5 +23,42 @@ The project has  steps
     - push/ add to the screen 
 
 
+The starter page 
+
+- it has a typewriter effect 
+
+---- 
 >>> Get Computer Choice 
+
+Generate random number 
+
+1. generate a random number between [1,10]
+
+Math.floor(Math.random()*(10 + 1))
+
+2. [5,10]
+Math.floor(Math.random()*(5 + 1)) + 5
+
+3. [n,m]
+Math.floor(Math.random()*(m - n + 1)) + n 
+
+``` javascript 
+// random choice by using arrays 
+function getComputerChoice() {
+    let computerArray = ['rock', 'paper', 'scissors']
+
+    // math.random [0,1)
+    let index = Math.floor(Math.random() * 3) // array.length
+    //let index = Math.floor(Math.random() * computerArray.length)
+   
+    //  console.log(index);
+
+    let computerChoice = computerArray[index]
+
+    console.log(computerChoice);
+
+    return computerChoice
+
+}
+```
 
