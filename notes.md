@@ -62,3 +62,17 @@ function getComputerChoice() {
 }
 ```
 
+  <script>
+        //  Output even numbers in the loop
+
+        // Use the for loop to output even numbers from 2 to 10.
+        let arr = []
+        for (let i = 2; i <= 10; i++) {
+            if (i % 2 === 0) {
+                continue
+            }
+            arr.push(i)
+        }
+        console.log(arr);
+
+    </script>

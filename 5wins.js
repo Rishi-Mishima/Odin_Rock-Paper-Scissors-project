@@ -70,7 +70,6 @@ function playGame() {
         playGame(); // Recursive call to continue playing
     } else if (humanScore === 5) {
         console.log("You Win the Game!");
-
         return // Stop the game immediately
     } else if (computerScore === 5) {
         console.log("Computer Wins the Game!");
