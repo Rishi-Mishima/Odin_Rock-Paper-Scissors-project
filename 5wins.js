@@ -20,14 +20,63 @@ function getComputerChoice() {
 
 }
 
+// ----------------------
 
-
-
+// get human choice 
 
 
 function getHumanChoice() {
-    //prompt
+    let userInput = prompt('enter a choice: rock, paper, scissors')
+
+    let lowerCase = userInput.toLowerCase()
+
+    console.log(lowerCase);
+    return lowerCase
+}
+// getHumanChoice()
+
+
+// ----------------------
+
+// compare the results: play one round 
+
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound(lowerCase, computerChoice) {
+
+    if (lowerCase === 'rock' && computerChoice == 'scissors' ||
+        lowerCase === 'scissors' && computerChoice == 'paper' ||
+        lowerCase === 'paper' && computerChoice == 'rock'
+    ) {
+        console.log('You WIN !');
+        humanScore++
+
+    } else if (lowerCase === computerChoice) {
+        console.log('its a tie');
+
+    } else {
+        console.log('You lost');
+        computerScore++
+    }
+    console.log(`human score is ${humanScore}, the computer score is ${computerScore}`);
 }
 
+function playGame() {
+    const humanChoice = getHumanChoice();
+    const computerChoice = getComputerChoice();
+    if (humanScore < 5 && computerScore < 5) {
+        playRound(humanChoice, computerChoice);
+        playGame(); // Recursive call to continue playing
+    } else if (humanScore === 5) {
+        console.log("You Win the Game!");
 
+        return // Stop the game immediately
+    } else if (computerScore === 5) {
+        console.log("Computer Wins the Game!");
+        return; // Stop the game immediately
+    }
 
+}
+
+playGame(); 
