@@ -38,11 +38,7 @@ function getHumanChoice() {
     choices.forEach(choice => {
         choice.addEventListener('click', () => {
             // Check if the game has ended
-            if (currentRound >= 5 || humanScore === 3 || computerScore === 3) {
-                console.log("Game over. Refresh the page to play again.");
-                declareWinner();
-                return;
-            }
+
 
             // Remove 'selected' class from all choices
             choices.forEach(c => c.classList.remove('selected'));
@@ -123,7 +119,7 @@ function playGame(humanChoice) {
     console.log(`Round ${currentRound}: Human Score: ${humanScore}, Computer Score: ${computerScore}`);
 
     // Check if the game should end
-    if (currentRound === 5 || humanScore === 3 || computerScore === 3) {
+    if (humanScore === 5 || computerScore === 5) {
         declareWinner();
     }
 }
